@@ -23,7 +23,7 @@ int MakeFieldConservative(field_type field){
     //Please leave FieldUndefined as the last element, it terminates the loop.
     //
     field_type  types_to_skip[] = {Bfield1, Bfield2, Bfield3, PhiField,
-        DrivingField1, DrivingField2, DrivingField3, GravPotential, DebugField,
+        DrivingField1, DrivingField2, DrivingField3, GravPotential, DebugField, LCoord1,LCoord2,LCoord3,
     FieldUndefined};
 
     if( FieldTypeIsDensity(field) ) MultiplyField = FALSE;

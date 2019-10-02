@@ -179,7 +179,12 @@ const field_type
   ImPsi = 102,
   FDMDensity = 103,
 
-  FieldUndefined  = 104;
+  /* Lagrangian Coordiantes */
+  LCoord1 = 104,
+  LCoord2 = 105,
+  LCoord3 = 106,
+
+  FieldUndefined  = 107;
 
 /*
 enum field_type {Density, TotalEnergy, InternalEnergy, Pressure,

@@ -1069,6 +1069,10 @@ EXTERN int   NumberOfEnergyBins;
 EXTERN float RadiationEnergyInBin[255];
 EXTERN float RadiationBinSED[255];
 
+/* LAgrangian Coordinates */
+
+EXTERN int LagrangianCoordinates;
+
 /* Vorticity Calculations */
 
 EXTERN int VelAnyl;

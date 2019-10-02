@@ -1207,7 +1207,8 @@ int ReadParameterFile(FILE *fptr, TopGridData &MetaData, float *Initialdt)
     ret += sscanf(line, "VelAnyl = %"ISYM, &VelAnyl);
     ret += sscanf(line, "BAnyl = %"ISYM, &BAnyl);
     ret += sscanf(line, "WriteExternalAccel = %"ISYM, &WriteExternalAccel);
-
+    /*Lagrangian Coordinates */
+    ret += sscanf(line, "LagrangianCoordinates = %"ISYM, &LagrangianCoordinates);
 
     /* Read MHD Paramters */
     ret += sscanf(line, "UsePoissonDivergenceCleaning = %"ISYM"", &UsePoissonDivergenceCleaning);

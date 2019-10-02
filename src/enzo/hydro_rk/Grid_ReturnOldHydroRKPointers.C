@@ -38,6 +38,7 @@ int grid::ReturnOldHydroRKPointers(float **Prim, bool ReturnMassFractions)
   int B1Num, B2Num, B3Num, PhiNum;
   int DeNum, HINum, HIINum, HeINum, HeIINum, HeIIINum, HMNum, H2INum, H2IINum,
       DINum, DIINum, HDINum;
+  int L1, L2, L3;
 
   /* Add the physical quantities */
 
@@ -128,6 +129,14 @@ int grid::ReturnOldHydroRKPointers(float **Prim, bool ReturnMassFractions)
   if (Galaxy1ColourNum != -1) Prim[nfield++] = OldBaryonField[Galaxy1ColourNum];
   if (Galaxy2ColourNum != -1) Prim[nfield++] = OldBaryonField[Galaxy2ColourNum];
   */
+
+  if (LagrangianCoordinates > 0) {
+    IdentifyLCoordFields(L1, L2, L3);
+    if (L1 > -1) Prim[nfield++] = OldBaryonField[L1];
+    if (L2 > -1) Prim[nfield++] = OldBaryonField[L2];
+    if (L3 > -1) Prim[nfield++] = OldBaryonField[L3];
+  }
+
 
   /* Convert the species and color fields into mass fractions */
 

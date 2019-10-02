@@ -235,6 +235,12 @@ int FOF(TopGridData *MetaData, LevelHierarchyEntry *LevelArray[],
 #ifdef TASKMAP
 int GetNodeFreeMemory(void);
 #endif
+int LagrangianCoordinatesInitialize(char *ParameterFile, 
+				HierarchyEntry &TopGrid, 
+				TopGridData &MetaData,
+				ExternalBoundary &Exterior, 
+				ImplicitProblemABC* &ImplicitSolver,
+				LevelHierarchyEntry *LevelArray[], int restart);
 
 #ifdef TRANSFER
 int RadiativeTransferInitialize(char *ParameterFile, 
@@ -766,6 +772,13 @@ Eint32 MAIN_NAME(Eint32 argc, char *argv[])
     }
   }
 #endif
+
+  /* Initialize Lagrangian Coordinates */
+  if (LagrangianCoordinatesInitialize(ParameterFile, TopGrid, MetaData, Exterior, 
+				  ImplicitSolver, LevelArray, restart) == FAIL) {
+    fprintf(stderr, "Error in LagrangianCoordaitnesInitialize.\n");
+    my_exit(EXIT_FAILURE);
+  }
 
   /* Initialize the radiative transfer */
 

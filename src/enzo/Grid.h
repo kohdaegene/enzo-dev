@@ -1835,6 +1835,9 @@ int TransferSubgridActiveParticles(grid* Subgrids[], int NumberOfSubgrids,
 				  int &HCOIINum,int &OHINum,int &H2OINum,
 				  int &O2INum);
 
+  /* Identify Lagrangian Coordinate fields */
+  int IdentifyLCoordFields(int &LCoord1Num, int &LCoord2Num, int &LCoord3Num);
+
 /* Zeus Solver. */
 
   int ZeusSolver(float *gamma, int igamfield, int nhy, 
@@ -2546,6 +2549,10 @@ int zEulerSweep(int j, int NumberOfSubgrids, fluxes *SubgridFluxes[],
     void SGS_AddEMF_scale_similarity(float **EMF);
     
     /* END Subgrid-scale modeling framework by P. Grete */
+
+
+/* Lagrangian Coodinates */
+  int InitializeLCoord();
 
 /* Comoving coordinate expansion terms. */
 

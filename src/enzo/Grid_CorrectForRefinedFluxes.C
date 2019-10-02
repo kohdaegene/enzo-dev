@@ -371,7 +371,8 @@ int grid::CorrectForRefinedFluxes(fluxes *InitialFluxes,
           }
         }
       }
-	
+	  int L1, L2, L3 = -1;
+      IdentifyLCoordFields(L1,L2,L3);
       for (field = 0; field < NumberOfBaryonFields; field++) { 
         // Multiply faces by density to get conserved quantities
         // (only multiply fields which we are going to correct)

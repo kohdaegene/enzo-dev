@@ -47,6 +47,14 @@ int grid::SetNumberOfColours(void)
     return FAIL;
   }
   
+    /* Lagrangian Coordinates are advected as colours */
+  int L1, L2, L3 = 0;
+  if (LagrangianCoordinates > 0){   
+    IdentifyLCoordFields(L1, L2, L3);
+    if (L1 > -1) _nc++; 
+    if (L2 > -1) _nc++; 
+    if (L3 > -1) _nc++; 
+  }  
   /*
   fprintf(stdout, "grid:SetNumberOfColours: %"ISYM" %"ISYM" %"ISYM" %"ISYM" %"ISYM" \n", 
   	  SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum); 

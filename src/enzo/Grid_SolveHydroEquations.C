@@ -283,6 +283,17 @@ int grid::SolveHydroEquations(int CycleNumber, int NumberOfSubgrids,
 	colnum[NumberOfColours++] = PSDenNum;
       }
     }
+
+    /* Lagrangian Coordinates are advected as colours */
+    int L1, L2, L3 = 0;
+    if (LagrangianCoordinates > 0)
+      {
+    IdentifyLCoordFields(L1, L2, L3);
+    if (L1 > -1) colnum[NumberOfColours++] = L1;
+    if (L2 > -1) colnum[NumberOfColours++] = L2;
+    if (L3 > -1) colnum[NumberOfColours++] = L3;
+      } 
+
     /* Determine if Gamma should be a scalar or a field. */
     
     int UseGammaField = FALSE;
